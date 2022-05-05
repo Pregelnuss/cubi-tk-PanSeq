@@ -1,0 +1,107 @@
+Metadata-Version: 2.1
+Name: cubi-tk
+Version: 0.2.0+85.g6a4f808
+Summary: Tooling for connecting GitLab, pipelines, and SODAR at CUBI.
+Home-page: https://github.com/bihealth/cubi-tk
+Author: Manuel Holtgrewe, Patrick Pett
+Author-email: manuel.holtgrewe@bihealth.de, patrick.pett@bihealth.de
+License: MIT license
+Keywords: cubi_tk
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS.rst
+
+![Continuous Integration Status](https://github.com/bihealth/cubi-tk/workflows/CI/badge.svg)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/71dd0ea53e444cd0949a00a7025face7)](https://www.codacy.com/gh/bihealth/cubi-tk/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bihealth/cubi-tk&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/71dd0ea53e444cd0949a00a7025face7)](https://www.codacy.com/gh/bihealth/cubi-tk/dashboard?utm_source=github.com&utm_medium=referral&utm_content=bihealth/cubi-tk&utm_campaign=Badge_Coverage)
+[![Documentation Status](https://readthedocs.org/projects/cubi-tk/badge/?version=latest)](https://cubi-tk.readthedocs.io/en/latest/?badge=latest)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
+# CUBI Toolkit
+
+Tooling for connecting GitLab, pipelines, and SODAR at CUBI.
+
+- [Documentation](https://cubi-tk.readthedocs.io/en/latest/?badge=latest)
+
+## Getting Started
+
+Prerequisites when using conda:
+
+```bash
+$ conda create -n cubi-tk python=3.7
+$ conda activate cubi-tk
+```
+
+Clone CUBI-SAK and install.
+
+```bash
+$ git clone git@cubi-gitlab.bihealth.org:CUBI/Pipelines/cubi-tk.git
+$ cd cubi-tk
+$ pip install -e .
+```
+
+## Building the Manual
+
+```bash
+$ pip install -r requirements/develop.txt
+$ cd docs_manual
+$ make clean html
+$ ls _build/html/index.html
+```
+
+## Argument Completion
+
+```bash
+$ cat >>~/.bashrc <<"EOF"
+eval "$(register-python-argcomplete cubi-tk)"
+EOF
+```
+
+
+# History
+
+## HEAD (unreleased)
+
+- temporarily working around SODAR REST API not returning sodar\_uuid where we expect it to
+- using library\_ name as an alternative to folder\_name
+
+## v0.2.0
+
+- Adjusting package meta data in `setup.py`.
+- Fixing documentation bulding bug.
+- Documentation is now built during testing.
+- Adding `cubi-tk snappy pull-sheet`.
+- Converting `snappy-transfer_utils`, adding `cubi-tk snappy ...`
+    - `itransfer-raw-data`
+    - `itransfer-ngs-mapping`
+    - `itransfer-variant-calling`
+- Adding `mypy` checks to CI.
+- Adding `--dry-run` and `--show-diff` arguments to `cubi-tk snappy pull-sheet`.
+- Adding `cubi-tk snake check` command.
+- Adding `cubi-tk isa-tab validate` command.
+- Adding `cubi-tk isa-tab resolve-hpo` command.
+- Adding `cubi-tk sodar download-sheet` command.
+- Adding `cubi-tk snappy kickoff` command.
+- Adding `cubi-tk org-raw {check,organize}` command.
+- `cubi-tk snappy pull-sheet` is a bit more interactive.
+- Adding `cubi-tk sea-snap pull-isa` command.
+- Adding `cubi-tk sea-snap write-sample-info` command.
+- Adding `cubi-tk sea-snap itransfer-mapping-results` command.
+- Adding more tools for interacting with SODAR.
+- Rebranding to `cubi-tk` / CUBI Toolkit
+
+## v0.1.0
+
+- Bootstrapping `cubi-tk` with ISA-tab templating via `cubi-tk isa-tpl <tpl>`.
+
+

@@ -1,0 +1,3 @@
+[console_scripts]
+cubi-tk = cubi_tk.__main__:main
+
