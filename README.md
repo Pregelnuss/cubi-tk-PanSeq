@@ -4,6 +4,8 @@
 [![Documentation Status](https://readthedocs.org/projects/cubi-tk/badge/?version=latest)](https://cubi-tk.readthedocs.io/en/latest/?badge=latest)
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
+# THIS IS MODIFIED CODE FROM DKFZ BRANCH FOR CREATING SAMPLE SHEETS FROM PANEL SEQUENCING DATA
+
 # CUBI Toolkit
 
 Tooling for connecting GitLab, pipelines, and SODAR at CUBI.
